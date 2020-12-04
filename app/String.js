@@ -1,9 +1,15 @@
 let str = "Каждый охотник желает знать, где сидит фазан."; 
 
  const firstIndexString=(string)=>{
-      let result = [];
-        string.split(' ').filter(n=> result.push(n.charAt(0)));
-      return result;
+     const firstSymbol = (value,index,arr) =>{
+        if(index == 0){
+          return true;
+        }else{
+          return arr[index-1] === ' ';
+        }
+     }
+
+     return string.split('').filter(firstSymbol);
 };
 
 
